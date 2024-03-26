@@ -23,8 +23,7 @@ class _WelcomePageState extends State<WelcomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Image(
-                  image: AssetImage('assets/images/tagamly_sozler001.png')),
+              const Image(image: AssetImage('assets/images/al_bilet002.png')),
               const SizedBox(
                 height: 40,
               ),
