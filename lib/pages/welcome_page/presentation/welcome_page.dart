@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:online_library/pages/sing_in_page/presentation/login_page.dart';
 import 'package:online_library/pages/sing_up_page/presentation/sing_up_page.dart';
+import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:online_library/widgets/style_button_widget.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -15,7 +16,7 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(249, 238, 240, 1),
+      backgroundColor: AppColors.white,
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -36,9 +37,9 @@ class _WelcomePageState extends State<WelcomePage> {
                 height: 30,
               ),
               StyleButtonWidget(
-                buttonColor: const Color.fromRGBO(13, 57, 52, 1),
-                buttonBorderColor: Colors.white,
-                buttonTextColor: Colors.white,
+                buttonColor: AppColors.mainYellow,
+                buttonBorderColor: AppColors.white,
+                buttonTextColor: AppColors.white,
                 buttonName: AppLocalizations.of(context)!.logIn,
                 onTap: () {
                   Navigator.push(
@@ -51,9 +52,9 @@ class _WelcomePageState extends State<WelcomePage> {
                 height: 10,
               ),
               StyleButtonWidget(
-                buttonColor: Colors.white,
-                buttonBorderColor: const Color.fromRGBO(13, 57, 52, 1),
-                buttonTextColor: const Color.fromRGBO(13, 57, 52, 1),
+                buttonColor: AppColors.mainBlue,
+                buttonBorderColor: AppColors.mainYellow,
+                buttonTextColor: AppColors.white,
                 buttonName: AppLocalizations.of(context)!.createAccaunt,
                 onTap: () {
                   Navigator.push(
