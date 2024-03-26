@@ -9,12 +9,11 @@ class MainDatailsWidget extends StatefulWidget {
 
 class _MainDatailsWidgetState extends State<MainDatailsWidget> {
   List<String> items = [
-    'All',
-    'Novel',
-    'Self-love',
-    'Science',
-    'Romance',
-    'Old-books'
+    'Konsert',
+    'Teatr',
+    'Kinoteatr',
+    'Sport',
+    'Başga',
   ];
 
   List<IconData> icons = [
@@ -69,7 +68,7 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
                                 border: current == index
                                     ? Border.all(
                                         color:
-                                            const Color.fromRGBO(13, 57, 52, 1),
+                                            Theme.of(context).primaryColorLight,
                                         width: 2)
                                     : null),
                             child: Center(
@@ -88,9 +87,9 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
                             child: Container(
                               width: 5,
                               height: 5,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: Color.fromRGBO(13, 57, 52, 1)),
+                                  color: Theme.of(context).primaryColorLight),
                             ))
                       ],
                     );
