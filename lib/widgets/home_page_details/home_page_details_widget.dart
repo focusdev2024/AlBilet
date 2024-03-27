@@ -31,6 +31,7 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    int crossAxisCount = calculateCrossAxisCount(context);
     return Container(
       margin: const EdgeInsets.all(5),
       width: double.infinity,
@@ -139,11 +140,11 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
           ),
         ),
         SliverGrid(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // Number of columns
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount, // Number of columns
             mainAxisSpacing: 10.0, // Spacing between rows
             crossAxisSpacing: 10.0, // Spacing between columns
-            childAspectRatio: 1.0, // Aspect ratio of each cell
+            childAspectRatio: 0.65, // Aspect ratio of each cell
           ),
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
@@ -202,4 +203,11 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
       ]),
     );
   }
+}
+
+int calculateCrossAxisCount(BuildContext context) {
+  double screenWidth = MediaQuery.of(context).size.width;
+  int crossAxisCount =
+      (screenWidth / 150).floor(); // Assuming each item has a width of 150
+  return crossAxisCount;
 }
