@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:online_library/pages/library_main_page/presentation/library_main_page.dart';
 import 'package:online_library/pages/read_and_buy_page/presentation/read_and_buy_page.dart';
 import 'package:online_library/pages/sing_up_page/presentation/sing_up_page.dart';
@@ -42,17 +43,40 @@ class OnlineLibrary extends StatelessWidget {
         });
       },
       theme: ThemeData(
-          scaffoldBackgroundColor: AppColors.white,
+          inputDecorationTheme: InputDecorationTheme(
+            hintStyle: TextStyle(color: AppColors.mainBlue),
+            labelStyle: TextStyle(color: AppColors.mainBlue),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: BorderSide(color: AppColors.mainBlue),
+            ),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: BorderSide(color: AppColors.mainBlue)),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: BorderSide(color: AppColors.mainBlue)),
+          ),
+          scaffoldBackgroundColor: AppColors.mainWhite,
           primaryColorLight: AppColors.mainBlue,
-          primaryColorDark: AppColors.white,
-          textTheme: TextTheme(
-              titleLarge: TextStyle(color: AppColors.mainBlue),
-              titleMedium: TextStyle(color: AppColors.mainBlue)),
+          primaryColorDark: AppColors.mainWhite,
+          textTheme: GoogleFonts.kanitTextTheme(
+            Theme.of(context).textTheme,
+          ).apply(
+            bodyColor: AppColors.mainBlue,
+            displayColor: AppColors.mainBlue,
+          ),
+          // textTheme: TextTheme(
+          //   titleLarge: TextStyle(color: AppColors.mainBlue),
+          //   titleMedium: TextStyle(color: AppColors.mainBlue),
+          //   titleSmall: TextStyle(color: AppColors.mainBlue),
+          //   displayLarge: TextStyle(fontFamily: ),
+          // ),
           shadowColor: Colors.grey.withOpacity(0.2),
           appBarTheme: AppBarTheme(
             backgroundColor: AppColors.mainBlue,
             iconTheme: IconThemeData(
-              color: AppColors.white,
+              color: AppColors.mainWhite,
             ),
             elevation: 2.0,
           ),

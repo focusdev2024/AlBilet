@@ -28,8 +28,14 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
 
   final List<String> items = ['TM', 'RU', 'EN'];
   String selectedItem = 'TM';
-  final List<String> places = ['Aşgabat', 'Türkmenistan', 'EN'];
-  String selectedPlace = 'Aşgabat';
+  // final List<String> places = [
+  //   'Aşgabat',
+  //   'Türkmenistan',
+  //   'Watan',
+  //   'Berkarar',
+  //   'Mollanepes',
+  // ];
+  // String selectedPlace = 'Aşgabat';
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +60,31 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
           actions: [
             Row(
               children: [
+                // Image.asset(
+                //   'assets/images/icons/location001.png',
+                //   width: 25,
+                // ),
+                // const SizedBox(width: 5),
+                // DropdownButton<String>(
+                //   iconDisabledColor: AppColors.mainYellow,
+                //   value: selectedPlace,
+                //   onChanged: (String? newValue) {
+                //     if (newValue != null) {
+                //       selectedPlace = newValue;
+                //       // Call setState to update the UI
+                //     }
+                //   },
+                //   items: places.map<DropdownMenuItem<String>>((String value) {
+                //     return DropdownMenuItem<String>(
+                //       value: value,
+                //       child: Text(
+                //         value,
+                //         style: TextStyle(color: AppColors.mainYellow),
+                //       ),
+                //     );
+                //   }).toList(),
+                // ),
+                const SizedBox(width: 10),
                 Image.asset(
                   'assets/images/icons/icon001.png',
                   width: 25,
@@ -85,7 +116,7 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
                   },
                   child: Text(
                     "Log in",
-                    style: TextStyle(color: AppColors.white),
+                    style: TextStyle(color: AppColors.mainWhite),
                   ),
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(

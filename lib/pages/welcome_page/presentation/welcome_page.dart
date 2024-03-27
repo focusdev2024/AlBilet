@@ -16,7 +16,7 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.mainWhite,
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -38,8 +38,8 @@ class _WelcomePageState extends State<WelcomePage> {
               ),
               StyleButtonWidget(
                 buttonColor: AppColors.mainYellow,
-                buttonBorderColor: AppColors.white,
-                buttonTextColor: AppColors.white,
+                buttonBorderColor: AppColors.mainWhite,
+                buttonTextColor: AppColors.mainWhite,
                 buttonName: AppLocalizations.of(context)!.logIn,
                 onTap: () {
                   Navigator.push(
@@ -54,7 +54,7 @@ class _WelcomePageState extends State<WelcomePage> {
               StyleButtonWidget(
                 buttonColor: AppColors.mainBlue,
                 buttonBorderColor: AppColors.mainYellow,
-                buttonTextColor: AppColors.white,
+                buttonTextColor: AppColors.mainWhite,
                 buttonName: AppLocalizations.of(context)!.createAccaunt,
                 onTap: () {
                   Navigator.push(
