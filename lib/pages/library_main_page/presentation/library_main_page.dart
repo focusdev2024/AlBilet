@@ -54,9 +54,9 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
           actions: [
             Row(
               children: [
-                Icon(
-                  Icons.language,
-                  color: AppColors.mainYellow,
+                Image.asset(
+                  'assets/images/icons/icon001.png',
+                  width: 25,
                 ),
                 const SizedBox(width: 5),
                 DropdownButton<String>(
