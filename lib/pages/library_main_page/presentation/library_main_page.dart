@@ -1,11 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:online_library/pages/welcome_page/presentation/welcome_page.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:online_library/widgets/favorites_list/favorites_list_widget.dart';
 import 'package:online_library/widgets/home_page_details/home_page_details_widget.dart';
-import 'package:online_library/widgets/left_nav_bar.dart';
+import 'package:online_library/widgets/pleace_sing_in_page.dart';
 
 class LibraryMainPage extends StatefulWidget {
   const LibraryMainPage({super.key});
@@ -24,10 +26,15 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
     });
   }
 
-  bool _isSearch = false;
+  //bool _isSearch = false;
 
-  final List<String> items = ['TM', 'RU', 'EN'];
-  String selectedItem = 'TM';
+  final List<String> items = [
+    'assets/images/icons/icons8-turkmenistan-circular-24.png',
+    'assets/images/icons/icons8-russian-federation-24.png',
+    'assets/images/icons/icons8-usa-24.png',
+  ];
+  String selectedItem =
+      'assets/images/icons/icons8-turkmenistan-circular-24.png';
   // final List<String> places = [
   //   'Aşgabat',
   //   'Türkmenistan',
@@ -60,37 +67,10 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
           actions: [
             Row(
               children: [
-                // Image.asset(
-                //   'assets/images/icons/location001.png',
-                //   width: 25,
-                // ),
-                // const SizedBox(width: 5),
-                // DropdownButton<String>(
-                //   iconDisabledColor: AppColors.mainYellow,
-                //   value: selectedPlace,
-                //   onChanged: (String? newValue) {
-                //     if (newValue != null) {
-                //       selectedPlace = newValue;
-                //       // Call setState to update the UI
-                //     }
-                //   },
-                //   items: places.map<DropdownMenuItem<String>>((String value) {
-                //     return DropdownMenuItem<String>(
-                //       value: value,
-                //       child: Text(
-                //         value,
-                //         style: TextStyle(color: AppColors.mainYellow),
-                //       ),
-                //     );
-                //   }).toList(),
-                // ),
                 const SizedBox(width: 10),
-                Image.asset(
-                  'assets/images/icons/icon001.png',
-                  width: 25,
-                ),
                 const SizedBox(width: 5),
                 DropdownButton<String>(
+                  iconSize: 0,
                   iconDisabledColor: AppColors.mainYellow,
                   value: selectedItem,
                   onChanged: (String? newValue) {
@@ -102,14 +82,11 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
                   items: items.map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(
-                        value,
-                        style: TextStyle(color: AppColors.mainYellow),
-                      ),
+                      child: Image.asset(value),
                     );
                   }).toList(),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: 15),
                 ElevatedButton(
                   onPressed: () {
                     Get.toNamed('welcome');
@@ -139,9 +116,6 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
           index: _selectedPage,
           children: [
             MainDatailsWidget(),
-            FavoritesListWidget(),
-            const Text('3'),
-            const Text('4'),
           ],
         ),
       ),
@@ -183,16 +157,151 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
                   icon: Icons.favorite_border,
                   iconColor: AppColors.mainYellow,
                   text: "Favorites",
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            content: Text(
+                              'Bu aýratynlyga girmek üçin \n ilki agza bolmagyňyzy haýyş edýäris.',
+                              style: Theme.of(context).textTheme.bodyLarge,
+                              textAlign: TextAlign.center,
+                            ),
+                            actions: <Widget>[
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    LibraryMainPage()));
+                                      },
+                                      child: const Text('Ýap'),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    WelcomePage()));
+                                      },
+                                      child: const Text('Agza bol'),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          );
+                        });
+                  },
                 ),
                 GButton(
                   icon: Icons.shopping_cart_outlined,
                   iconColor: AppColors.mainYellow,
                   text: "Cart",
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            content: Text(
+                              'Bu aýratynlyga girmek üçin \n ilki agza bolmagyňyzy haýyş edýäris.',
+                              style: Theme.of(context).textTheme.bodyLarge,
+                              textAlign: TextAlign.center,
+                            ),
+                            actions: <Widget>[
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    LibraryMainPage()));
+                                      },
+                                      child: const Text('Ýap'),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    WelcomePage()));
+                                      },
+                                      child: const Text('Agza bol'),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          );
+                        });
+                  },
                 ),
                 GButton(
                   icon: Icons.person,
                   iconColor: AppColors.mainYellow,
                   text: "Profile",
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            content: Text(
+                              'Bu aýratynlyga girmek üçin \n ilki agza bolmagyňyzy haýyş edýäris.',
+                              style: Theme.of(context).textTheme.bodyLarge,
+                              textAlign: TextAlign.center,
+                            ),
+                            actions: <Widget>[
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    LibraryMainPage()));
+                                      },
+                                      child: const Text('Ýap'),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    WelcomePage()));
+                                      },
+                                      child: const Text('Agza bol'),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          );
+                        });
+                  },
                 ),
               ]),
         ),
