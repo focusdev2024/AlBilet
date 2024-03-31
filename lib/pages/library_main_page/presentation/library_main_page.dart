@@ -1,13 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:online_library/pages/welcome_page/presentation/welcome_page.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
-import 'package:online_library/widgets/favorites_list/favorites_list_widget.dart';
 import 'package:online_library/widgets/home_page_details/home_page_details_widget.dart';
-import 'package:online_library/widgets/pleace_sing_in_page.dart';
 
 class LibraryMainPage extends StatefulWidget {
   const LibraryMainPage({super.key});
