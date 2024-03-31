@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:online_library/pages/sing_in_page/presentation/login_page.dart';
-import 'package:online_library/pages/sing_up_page/presentation/sing_up_page.dart';
+import 'package:online_library/pages/sing_up_page/presentation/singup_page.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:online_library/widgets/style_button_widget.dart';
 
@@ -28,11 +28,14 @@ class _WelcomePageState extends State<WelcomePage> {
               const SizedBox(
                 height: 40,
               ),
-              Text(AppLocalizations.of(context)!.helloWorld),
+              Text(
+                AppLocalizations.of(context)!.welcome,
+                style: Theme.of(context).textTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
               const SizedBox(
                 height: 20,
               ),
-              Text(AppLocalizations.of(context)!.readWithOutLimits),
               const SizedBox(
                 height: 30,
               ),
@@ -55,7 +58,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 buttonColor: AppColors.mainBlue,
                 buttonBorderColor: AppColors.mainYellow,
                 buttonTextColor: AppColors.mainWhite,
-                buttonName: AppLocalizations.of(context)!.createAccaunt,
+                buttonName: AppLocalizations.of(context)!.singUp,
                 onTap: () {
                   Navigator.push(
                       context,

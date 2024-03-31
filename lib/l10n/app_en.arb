@@ -1,56 +1,30 @@
 {
-  "helloWorld": "Hello World!",
-  "@helloWorld": {
-    "description": "The conventional newborn programmer greeting"
-  },
+  "welcome": "Ýurdumyzdaky online biletleri hüdürleýän programmamyza hoş geldiňiz!",
+
 
   "readWithOutLimits": "Read without limits",
-  "@readWithOutLimits": {
-    "description": "Reading context"
-  },
 
-  "createAccaunt": "Create Accaunt",
-  "@createAccaunt": {
-    "description": "Creatng accaunt"
-  },
+
 
   "userName": "User name",
-  "@userName": {
-    "description": "User name"
-  },
 
-  "logIn": "Log in",
-  "@logIn": {
-    "description": "Log in"
-  },
 
-  "dontHaveAccaunt": "Don't have an accaunt yet?",
-  "@dontHaveAccaunt": {
-    "description": "do not accaunt yet"
-  },
+  "logIn": "Giriş",
 
-  "singUpHere": "Sing up here",
-  "@singUpHere": {
-    "description": "Sing up here"
-  },
 
-  "singUp": "Sing up",
-  "@singUpHere": {
-    "description": "Sing up"
-  },
+  "dontHaveAccaunt": "Siz bizde birinji saparmy? Onda:",
 
-  "alreadyHaveAccaunt": "Already have an accaunt?",
-  "@alreadyHaveAccaunt": {
-    "description": "Already singned up"
-  },
 
-  "logInHere": "Log in here",
-  "@logInHere": {
-    "description": "Log in here"
-  },
 
-   "tagamlySozler": "Tagamly Sözler",
-  "@tagamlySozler": {
-    "description": "Tagamly sozler"
-  }
+  "singUp": "Agza bolmak",
+
+
+  "alreadyHaveAccaunt": "Siz eýýäm biz bilenmi? Onda:",
+
+
+
+   "tagamlySozler": "Tagamly Sözler"
+
+
+ 
 }

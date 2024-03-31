@@ -2,18 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // ignore: must_be_immutable
-class PhoneNumberTextField extends StatelessWidget {
+class PhoneNumberTextField extends StatefulWidget {
   const PhoneNumberTextField({
     super.key,
-    required this.userNameController,
-    required this.label,
+    required this.phoneNumberController,
   });
 
-  final TextEditingController userNameController;
-  final String label;
+  final TextEditingController phoneNumberController;
 
+  @override
+  State<PhoneNumberTextField> createState() => _PhoneNumberTextFieldState();
+}
+
+class _PhoneNumberTextFieldState extends State<PhoneNumberTextField> {
   void textFieldClear() {
-    userNameController.clear();
+    widget.phoneNumberController.clear();
   }
 
   @override
@@ -21,7 +24,7 @@ class PhoneNumberTextField extends StatelessWidget {
     return SizedBox(
       width: 300,
       child: TextField(
-        controller: userNameController,
+        controller: widget.phoneNumberController,
         keyboardType: TextInputType.phone,
         inputFormatters: [
           LengthLimitingTextInputFormatter(9),
@@ -30,7 +33,7 @@ class PhoneNumberTextField extends StatelessWidget {
         ],
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
-          labelText: label,
+          labelText: 'Telefon belgi',
           prefix: const Text('+993 '),
           //hintText: '+993 -- -- -- -- --',
           suffix: GestureDetector(

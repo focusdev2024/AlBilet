@@ -28,7 +28,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
         controller: widget.passwordController,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
-          labelText: "Password",
+          labelText: "Parol",
           suffix: GestureDetector(
             onTap: () {
               setState(() {

@@ -1,15 +1,12 @@
 {
-    "helloWorld": "¡Hola Mundo!",
+    "welcome": "Добро пожаловать в наше общенациональное онлайн-приложение для продажи билетов!",
     "readWithOutLimits": "Salam",
-    "createAccaunt": "Akkaunt doretmek",
     "logInAsGuest": "Myhman bolup girmek",
     "userName": "Ulanyjy ady",
-    "logIn": "Agza bolmak",
-    "dontHaveAccaunt": "Egtak agza bolmadyňyzmy?",
-    "singUpHere": "Agza bol",
-    "singUp": "Agza bol",
-    "alreadyHaveAccaunt": "Siz eýýäm biziň agzamyzmy?",
-    "logInHere": "Giriş",
+    "logIn": "Войти",
+    "dontHaveAccaunt": "Вы посещаете нас впервые? Затем:",
+    "singUp": "Зарегистрироваться",
+    "alreadyHaveAccaunt": "Вы уже наш участник? Затем:",
     "tagamlySozler": "Tagamly Sözler"
 
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:online_library/pages/library_main_page/presentation/library_main_page.dart';
-import 'package:online_library/pages/sing_up_page/presentation/sing_up_page.dart';
+import 'package:online_library/pages/sing_up_page/presentation/singup_page.dart';
+import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:online_library/widgets/style_button_widget.dart';
 
 import '../../../widgets/password_text_field.dart';
@@ -21,7 +22,7 @@ class _LogInPageState extends State<LogInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(249, 238, 240, 1),
+      backgroundColor: AppColors.mainWhite,
       body: SafeArea(
           child: Center(
         child: Padding(
@@ -29,18 +30,16 @@ class _LogInPageState extends State<LogInPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Image(
-                  image: AssetImage('assets/images/tagamly_sozler001.png')),
+              const Image(image: AssetImage('assets/images/al_bilet002.png')),
               const SizedBox(height: 30),
               PhoneNumberTextField(
-                userNameController: phoneNameController,
-                label: 'Phone number',
+                phoneNumberController: phoneNameController,
               ),
               const SizedBox(height: 10),
               PasswordTextField(passwordController: passwordController),
               const SizedBox(height: 30),
               StyleButtonWidget(
-                buttonColor: const Color.fromRGBO(13, 57, 52, 1),
+                buttonColor: AppColors.mainBlue,
                 buttonBorderColor: Colors.white,
                 buttonTextColor: Colors.white,
                 buttonName: AppLocalizations.of(context)!.logIn,
@@ -50,7 +49,7 @@ class _LogInPageState extends State<LogInPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const LibraryMainPage()));
+                            builder: (context) => const AlBiletMainPage()));
                   }
                 },
               ),
@@ -68,7 +67,7 @@ class _LogInPageState extends State<LogInPage> {
                               builder: (context) => const SingUpPage()));
                     },
                     child: Text(
-                      AppLocalizations.of(context)!.singUpHere,
+                      AppLocalizations.of(context)!.singUp,
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),

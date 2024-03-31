@@ -5,14 +5,14 @@ import 'package:online_library/pages/welcome_page/presentation/welcome_page.dart
 import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:online_library/widgets/home_page_details/home_page_details_widget.dart';
 
-class LibraryMainPage extends StatefulWidget {
-  const LibraryMainPage({super.key});
+class AlBiletMainPage extends StatefulWidget {
+  const AlBiletMainPage({super.key});
 
   @override
-  State<LibraryMainPage> createState() => _LibraryMainPageState();
+  State<AlBiletMainPage> createState() => _AlBiletMainPageState();
 }
 
-class _LibraryMainPageState extends State<LibraryMainPage> {
+class _AlBiletMainPageState extends State<AlBiletMainPage> {
   int _selectedPage = 0;
 
   void onSelectedPage(int index) {
@@ -175,7 +175,7 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    LibraryMainPage()));
+                                                    AlBiletMainPage()));
                                       },
                                       child: const Text('Ýap'),
                                     ),
@@ -225,7 +225,7 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    LibraryMainPage()));
+                                                    AlBiletMainPage()));
                                       },
                                       child: const Text('Ýap'),
                                     ),
@@ -275,7 +275,7 @@ class _LibraryMainPageState extends State<LibraryMainPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    LibraryMainPage()));
+                                                    AlBiletMainPage()));
                                       },
                                       child: const Text('Ýap'),
                                     ),

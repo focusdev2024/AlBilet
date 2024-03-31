@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:online_library/pages/library_main_page/presentation/library_main_page.dart';
 import 'package:online_library/pages/read_and_buy_page/presentation/read_and_buy_page.dart';
-import 'package:online_library/pages/sing_up_page/presentation/sing_up_page.dart';
+import 'package:online_library/pages/sing_up_page/presentation/singup_page.dart';
 import 'package:online_library/pages/welcome_page/presentation/welcome_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
@@ -21,21 +21,21 @@ class OnlineLibrary extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Online Library",
+      title: "Al Bilet",
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      initialRoute: '/libraryMain',
+      initialRoute: '/singIn',
       getPages: [
         GetPage(name: '/welcome', page: () => const WelcomePage()),
         GetPage(name: '/singIn', page: () => const LogInPage()),
         GetPage(name: '/singUp', page: () => const SingUpPage()),
-        GetPage(name: '/libraryMain', page: () => const LibraryMainPage()),
+        GetPage(name: '/alBiletMain', page: () => const AlBiletMainPage()),
         GetPage(
           name: '/readAndBuyPage',
           page: () => const ReadAndBuyPage(),
         ),
         GetPage(
-            name: '/libraryMain/mainDetails', page: () => MainDatailsWidget()),
+            name: '/alBiletMain/mainDetails', page: () => MainDatailsWidget()),
       ],
       onGenerateRoute: (RouteSettings settings) {
         return MaterialPageRoute<void>(builder: (context) {
