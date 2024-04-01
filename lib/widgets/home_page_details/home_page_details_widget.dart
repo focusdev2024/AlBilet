@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:online_library/tools/class/actionList.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -13,10 +14,150 @@ class MainDatailsWidget extends StatefulWidget {
 }
 
 class _MainDatailsWidgetState extends State<MainDatailsWidget> {
+  final actions = [
+    actionList(
+        actionId: 1,
+        imageName:
+            'assets/images/conserts/1e58c5745f56cbb93a37dfe9ceb52917.webp',
+        title:
+            'Arkadag şäherinde Halkara zenanlar güni mynasybetli konsertler geçiriler',
+        location:
+            'Arkadag şäherinde Aman Gulmammedowyň adyny göterýän Döwlet drama teatry',
+        time: '15:22 01.03.2024'),
+    actionList(
+      actionId: 1,
+      imageName: 'assets/images/conserts/9ccf20131de046f245e45cd8e40a7304.webp',
+      title: 'Oskar filmlerinden aýdym-saz Aşgabatda ýerine ýetiriler',
+      location: 'Magtymguly adyndaky milli aýdym-saz we drama teatry',
+      time: '13:46 26.01.2024',
+    ),
+    actionList(
+      actionId: 1,
+      imageName: 'assets/images/conserts/ee7c4071fd96138e7306da1ff6ac1fe3.webp',
+      title: '“Şemiň simfoniýasy” atly konsert',
+      location: 'Magtymguly adyndaky milli aýdym-saz we drama teatry',
+      time: '16:30 23.01.2024',
+    ),
+    actionList(
+      actionId: 1,
+      imageName: 'assets/images/conserts/00afd5c8bbf3128203b1ea963b89e9a2.webp',
+      title: '"Kamera aýdym-saz agşamy"',
+      location: 'Magtymguly adyndaky milli aýdym-saz we drama teatry',
+      time: '16:28 23.01.2024',
+    ),
+    actionList(
+      actionId: 2,
+      imageName: 'assets/images/teatrs/31e0e3e93116d3b5a1f230663b6b76eb.webp',
+      title: '"Dünýäniň görki zenanlar" sahnasy',
+      location: 'Magtymguly adyndaky milli aýdym-saz we drama teatry',
+      time: '12:40 09.03.2024',
+    ),
+    actionList(
+      actionId: 2,
+      imageName: 'assets/images/teatrs/8b8bb9dbe5a4b81aab4026e7947aa5e8.webp',
+      title: ' "Saňa ýalan maňa çyn" atly sahna oýny',
+      location: 'Mollanepes adyndaky talyplar teatry',
+      time: '10:47 01.05.2023',
+    ),
+    actionList(
+      actionId: 2,
+      imageName: 'assets/images/teatrs/0e1d8153148f0e841d2c81e2062ec1db.webp',
+      title: '«Gelinler»',
+      location:
+          'Türkmenistanyň Beýik Saparmyrat Türkmenbaşy adyndaky baş drama teatry',
+      time: '19:00 12.12.2023',
+    ),
+    actionList(
+      actionId: 2,
+      imageName: 'assets/images/teatrs/57ff016b48547cc0262fa0c4e0bca961.webp',
+      title: '«Колобок»',
+      location: 'A.S.Puşkin adyndaky döwlet rus drama teatrynda',
+      time: '12:00 08.12.2023',
+    ),
+    actionList(
+      actionId: 3,
+      imageName: 'assets/images/sirks/8e63b5adb5fedeee43402fd3c2ed4eaa.webp',
+      title: 'Гастроли московского цирка «Carnelly»',
+      location: 'пр. Махтумкули, 134 A. Государственный Цирк Туркменистана',
+      time: '08:38 05.03.2018',
+    ),
+    actionList(
+      actionId: 3,
+      imageName: 'assets/images/sirks/a2fcc59cce6b97d5ca8f5346920ef015.webp',
+      title: 'Гастроли российских цирков в городе Балканабат',
+      location: 'Туркменская белая юрта',
+      time: '13:46 05.09.2023',
+    ),
+    actionList(
+      actionId: 3,
+      imageName: 'assets/images/sirks/63034ee0c1be24332c1b634c705d97f5.webp',
+      title: 'Государственный цирк имени «Гёроглы» приглашает на показ',
+      location: 'Государственный цирк имени "Гёроглы" города Аркадаг',
+      time: '17:53 29.03.2024',
+    ),
+    actionList(
+      actionId: 3,
+      imageName: 'assets/images/sirks/b859cf7f2d754ca00cd702413183a4e6.webp',
+      title: 'Большой Московский цирк в Ашхабаде',
+      location: ' Государственного цирка Туркменистана',
+      time: '16:10 30.11.2022',
+    ),
+    actionList(
+      actionId: 4,
+      imageName: 'assets/images/cinemas/d38531a8e9351601888a822711a4a5ab.webp',
+      title: 'Şükür güni” filmi',
+      location: '“Türkmenistan” kinokonsert zaly',
+      time: '10:30 03.02.2024',
+    ),
+    actionList(
+      actionId: 4,
+      imageName: 'assets/images/cinemas/354784d578b47db185a3b6e2f64e4147.webp',
+      title: 'Проклятие Аннабель',
+      location: '"Türkmenistan" kinokonsert merkezi',
+      time: '14:19 01.04.2024',
+    ),
+    actionList(
+      actionId: 4,
+      imageName: 'assets/images/cinemas/e5196dc7f9977a535495573bdcc6a1ff.webp',
+      title: 'Дудочник',
+      location: 'Киноконцертный зал «Туркменистан»',
+      time: '13:18 21.02.2024',
+    ),
+    actionList(
+      actionId: 4,
+      imageName: 'assets/images/cinemas/ef87a22d7a7f3ced9300a75cb30dd51b.webp',
+      title: 'По щучьему велению',
+      location: 'Киноконцертный зал «Ватан»',
+      time: '17:1211.12.2023',
+    ),
+    actionList(
+      actionId: 5,
+      imageName: 'assets/images/sports/80300a17c9c84cf4a4a89014b5bb2590.webp',
+      title: 'Türkmenistan — Eýran oýnuna petekler satylyp başlandy',
+      location: '«Aşgabat» köpugurly stadiony',
+      time: '20:00 26.04.2024',
+    ),
+    actionList(
+      actionId: 5,
+      imageName: 'assets/images/sports/Hokkey.webp',
+      title: 'Aşgabatda hokkeý boýunça halkara ýaryş geçiriler',
+      location: 'Спортивный комплекс ледовых видов спорта',
+      time: '02.03.2024',
+    ),
+    actionList(
+      actionId: 6,
+      imageName: 'assets/images/others/ae2f516f7e68e678a09d90e196d0608f.webp',
+      title: '«Ашхабадское танго»',
+      location: 'В Культурном центре «Шапак» (район 3 парка).',
+      time: '19:19 06.05.2019',
+    ),
+  ];
+
   List<String> items = [
     'All',
     'Konsert',
     'Teatr',
+    'Sirk',
     'Kinoteatr',
     'Sport',
     'Başga',
@@ -33,8 +174,6 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
   int current = 0;
 
   final _searchController = TextEditingController();
-
-  final String assetImagePath = 'assets/images/';
 
   int activeIndex = 0;
   final urlImages = [
@@ -208,8 +347,9 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
             childAspectRatio: 0.65, // Aspect ratio of each cell
           ),
           delegate: SliverChildBuilderDelegate(
-            childCount: 20,
+            childCount: actions.length,
             (BuildContext context, int index) {
+              final action = actions[index];
               {
                 return Padding(
                   padding: const EdgeInsets.symmetric(
@@ -234,7 +374,8 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
                       children: [
                         Stack(
                           children: [
-                            Container(
+                            GestureDetector(
+                              onTap: () {},
                               child: ClipRRect(
                                 borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(30),
@@ -242,7 +383,7 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
                                     bottomLeft: Radius.circular(30),
                                     bottomRight: Radius.circular(30)),
                                 child: Image.asset(
-                                  'assets/images/tagamly_sozler001.png',
+                                  action.imageName,
                                   width: 300,
                                   height: 200,
                                   fit: BoxFit.cover,
@@ -267,14 +408,31 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
                           ],
                         ),
                         const SizedBox(height: 10),
-                        Text('Book Name',
-                            style: Theme.of(context).textTheme.titleLarge),
-                        const SizedBox(height: 5),
-                        Text(
-                          'Author Name',
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                        const SizedBox(height: 10),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                action.title,
+                                style: Theme.of(context).textTheme.labelLarge,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const SizedBox(height: 5),
+                              Text(
+                                action.location,
+                                style: Theme.of(context).textTheme.labelMedium,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                action.time,
+                                style: Theme.of(context).textTheme.labelSmall,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),

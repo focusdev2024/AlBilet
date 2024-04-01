@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:online_library/pages/otp/presentation/otp.dart';
 import 'package:online_library/pages/library_main_page/presentation/library_main_page.dart';
 import 'package:online_library/pages/read_and_buy_page/presentation/read_and_buy_page.dart';
 import 'package:online_library/pages/sing_up_page/presentation/singup_page.dart';
@@ -24,7 +25,7 @@ class OnlineLibrary extends StatelessWidget {
       title: "Al Bilet",
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      initialRoute: '/singIn',
+      initialRoute: '/alBiletMain',
       getPages: [
         GetPage(name: '/welcome', page: () => const WelcomePage()),
         GetPage(name: '/singIn', page: () => const LogInPage()),
@@ -36,6 +37,7 @@ class OnlineLibrary extends StatelessWidget {
         ),
         GetPage(
             name: '/alBiletMain/mainDetails', page: () => MainDatailsWidget()),
+        GetPage(name: '/getTokenPage', page: () => GetTokenPage()),
       ],
       onGenerateRoute: (RouteSettings settings) {
         return MaterialPageRoute<void>(builder: (context) {

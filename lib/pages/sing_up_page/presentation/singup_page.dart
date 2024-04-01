@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
-import 'package:online_library/pages/get_token_page/presentation/get_token_page.dart';
 import 'package:online_library/pages/sing_in_page/presentation/login_page.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:online_library/widgets/phone_number_text_field.dart';
@@ -22,11 +21,17 @@ class _SingUpPageState extends State<SingUpPage> {
   void auth() {
     final phoneNumber = phoneNameController.text;
     if (phoneNumber.length == 9) {
-      Get.to(const GetTokenPage());
+      Get.toNamed('/getTokenPage');
     } else {
       errorText = 'Siz nädogry nomyr girizdiňiz!';
     }
     setState(() {});
+  }
+
+  @override
+  void dispose() {
+    phoneNameController.dispose();
+    super.dispose();
   }
 
   @override
