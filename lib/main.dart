@@ -8,6 +8,7 @@ import 'package:online_library/pages/sing_up_page/presentation/singup_page.dart'
 import 'package:online_library/pages/welcome_page/presentation/welcome_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
+import 'package:online_library/widgets/about_action/aboutaction_widget.dart';
 import 'package:online_library/widgets/home_page_details/home_page_details_widget.dart';
 import 'pages/sing_in_page/presentation/login_page.dart';
 
@@ -37,7 +38,8 @@ class OnlineLibrary extends StatelessWidget {
         ),
         GetPage(
             name: '/alBiletMain/mainDetails', page: () => MainDatailsWidget()),
-        GetPage(name: '/getTokenPage', page: () => GetTokenPage()),
+        GetPage(name: '/getTokenPage', page: () => const GetTokenPage()),
+        GetPage(name: '/aboutAction', page: () => const AboutActionPage())
       ],
       onGenerateRoute: (RouteSettings settings) {
         return MaterialPageRoute<void>(builder: (context) {

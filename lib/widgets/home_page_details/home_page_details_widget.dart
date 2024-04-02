@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:online_library/tools/class/actionList.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -369,14 +370,16 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
                         ),
                       ],
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Stack(
-                          children: [
-                            GestureDetector(
-                              onTap: () {},
-                              child: ClipRRect(
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.toNamed('/aboutAction');
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Stack(
+                            children: [
+                              ClipRRect(
                                 borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(30),
                                     topRight: Radius.circular(30),
@@ -389,51 +392,53 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                            ),
-                            Positioned(
-                                bottom: 10,
-                                right: 10,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: AppColors.mainGrey100,
-                                      borderRadius: BorderRadius.circular(30)),
-                                  child: IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.favorite,
-                                      color: AppColors.mainYellow,
+                              Positioned(
+                                  bottom: 10,
+                                  right: 10,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        color: AppColors.mainGrey100,
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                    child: IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.favorite,
+                                        color: AppColors.mainYellow,
+                                      ),
                                     ),
-                                  ),
-                                ))
-                          ],
-                        ),
-                        const SizedBox(height: 10),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                action.title,
-                                style: Theme.of(context).textTheme.labelLarge,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              const SizedBox(height: 5),
-                              Text(
-                                action.location,
-                                style: Theme.of(context).textTheme.labelMedium,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                action.time,
-                                style: Theme.of(context).textTheme.labelSmall,
-                                overflow: TextOverflow.ellipsis,
-                              ),
+                                  ))
                             ],
                           ),
-                        )
-                      ],
+                          const SizedBox(height: 10),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  action.title,
+                                  style: Theme.of(context).textTheme.labelLarge,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                const SizedBox(height: 5),
+                                Text(
+                                  action.location,
+                                  style:
+                                      Theme.of(context).textTheme.labelMedium,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                const SizedBox(height: 10),
+                                Text(
+                                  action.time,
+                                  style: Theme.of(context).textTheme.labelSmall,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 );
