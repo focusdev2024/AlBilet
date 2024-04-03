@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:online_library/widgets/home_page_details/all_action_bar.dart';
+import 'package:online_library/widgets/home_page_details/cinemas_bar.dart';
 import 'package:online_library/widgets/home_page_details/consert_bar.dart';
+import 'package:online_library/widgets/home_page_details/others_bar.dart';
+import 'package:online_library/widgets/home_page_details/sirks_bar.dart';
+import 'package:online_library/widgets/home_page_details/sports_bar.dart';
+import 'package:online_library/widgets/home_page_details/teatrs_bar.dart';
 
 class MainDatailsWidget extends StatefulWidget {
   const MainDatailsWidget({super.key});
@@ -55,6 +60,11 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
         body: TabBarView(children: [
           AllActionsBar(),
           ConsertsBar(),
+          TeatrsBar(),
+          SirksBar(),
+          CinemasBar(),
+          SportsBar(),
+          OthersBar(),
         ]),
       ),
     );
