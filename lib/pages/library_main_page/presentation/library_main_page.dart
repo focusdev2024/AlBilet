@@ -31,26 +31,12 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
   ];
   String selectedItem =
       'assets/images/icons/icons8-turkmenistan-circular-24.png';
-  // final List<String> places = [
-  //   'Aşgabat',
-  //   'Türkmenistan',
-  //   'Watan',
-  //   'Berkarar',
-  //   'Mollanepes',
-  // ];
-  // String selectedPlace = 'Aşgabat';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // drawer: const LeftNavBarWidget(),
       appBar: AppBar(
           elevation: 2,
-          // title: _isSearch
-          //     ? _buildSearchField()
-          //     : Text(
-          //         AppLocalizations.of(context)!.tagamlySozler,
-          //       ),
           leading: Padding(
             padding: const EdgeInsets.all(8.0),
             child: ClipRRect(
@@ -87,23 +73,15 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
                   onPressed: () {
                     Get.toNamed('welcome');
                   },
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          AppColors.mainYellow)),
                   child: Text(
                     "Log in",
                     style: TextStyle(color: AppColors.mainWhite),
                   ),
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          AppColors.mainYellow)),
                 ),
                 const SizedBox(width: 10),
-                // IconButton(
-                //   icon: Icon(_isSearch ? Icons.close : Icons.search),
-                //   onPressed: () {
-                //     setState(() {
-                //       _isSearch = !_isSearch;
-                //     });
-                //   },
-                // ),],)
               ],
             ),
           ]),

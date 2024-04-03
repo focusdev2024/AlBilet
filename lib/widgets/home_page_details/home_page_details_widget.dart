@@ -1,7 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:online_library/tools/class/actionList.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
@@ -154,23 +152,7 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
     ),
   ];
 
-  List<String> items = [
-    'All',
-    'Konsert',
-    'Teatr',
-    'Sirk',
-    'Kinoteatr',
-    'Sport',
-    'Başga',
-  ];
-
-  List<IconData> icons = [
-    Icons.home,
-    Icons.abc,
-    Icons.abc_rounded,
-    Icons.ac_unit,
-    Icons.access_alarm_rounded
-  ];
+  List<Widget> widgets = [];
 
   int current = 0;
 
@@ -188,266 +170,266 @@ class _MainDatailsWidgetState extends State<MainDatailsWidget> {
     'assets/images/carousel_images/ee7c4071fd96138e7306da1ff6ac1fe3-8961226-300x200-2.webp',
   ];
 
+  var _filteredAction = <actionList>[];
+
+  void _searchActions() {
+    final query = _searchController.text;
+    if (query.isNotEmpty) {
+      _filteredAction = actions.where((actionList book) {
+        return book.title.toLowerCase().contains(query.toLowerCase());
+      }).toList();
+    } else {
+      _filteredAction = actions;
+    }
+
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    _filteredAction = actions;
+
+    _searchController.addListener(() {
+      _searchActions();
+    });
+  }
+
+  List<String> actionNames = [
+    'All',
+    'Konsert',
+    'Teatr',
+    'Sirk',
+    'Kinoteatr',
+    'Sport',
+    'Başga',
+  ];
+
   @override
   Widget build(BuildContext context) {
     int crossAxisCount = calculateCrossAxisCount(context);
-    return Container(
-      margin: const EdgeInsets.all(5),
-      width: double.infinity,
-      height: double.infinity,
-      child: CustomScrollView(slivers: [
-        SliverPersistentHeader(
-          pinned: true,
-          delegate: _SliverAppBarDelegate(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 60,
-                  width: double.infinity,
-                  child: ListView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: items.length,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (ctx, index) {
-                        return Column(
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  current = index;
-                                });
-                              },
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 300),
-                                margin: const EdgeInsets.all(5),
-                                width: 80,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                    color: current == index
-                                        ? Colors.white70
-                                        : Colors.white54,
-                                    borderRadius: current == index
-                                        ? BorderRadius.circular(15)
-                                        : BorderRadius.circular(10),
-                                    border: current == index
-                                        ? Border.all(
-                                            color: Theme.of(context)
-                                                .primaryColorLight,
-                                            width: 2)
-                                        : null),
+    return DefaultTabController(
+      length: actionNames.length,
+      child: Scaffold(
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: CustomScrollView(slivers: [
+            SliverToBoxAdapter(
+              child: Container(
+                color: AppColors.mainBlue,
+                child: TabBar(
+                    isScrollable: true,
+                    indicator: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(10.0),
+                        topRight: Radius.circular(10.0),
+                      ),
+                      color: AppColors.mainWhite,
+                    ),
+                    tabs: actionNames
+                        .map((String name) => Tab(
+                              child: SizedBox(
+                                width: 100,
                                 child: Center(
                                   child: Text(
-                                    items[index],
-                                    style: TextStyle(
-                                        color: current == index
-                                            ? Colors.black
-                                            : Colors.grey),
+                                    name,
                                   ),
                                 ),
                               ),
-                            ),
-                            Visibility(
-                                visible: current == index,
-                                child: Container(
-                                  width: 5,
-                                  height: 5,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color:
-                                          Theme.of(context).primaryColorLight),
-                                ))
-                          ],
-                        );
-                      }),
-                ),
-              ],
-            ),
-            minHeight: 66, // minHeight of the _SliverAppBarDelegate
-            maxHeight: 66, // maxHeight of the _SliverAppBarDelegate
-          ),
-        ),
-        //Search start
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextField(
-              controller: _searchController,
-              decoration: InputDecoration(
-                suffixIcon: GestureDetector(
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    child: Image.asset('assets/images/icons/search001.png'),
-                  ),
-                ),
-                labelText: "Search",
-                filled: true,
-                fillColor: AppColors.mainWhite,
+                            ))
+                        .toList()),
               ),
             ),
-          ),
-        ),
-        //Search end
-        //Carousel start
-        SliverToBoxAdapter(
-          child: Column(
-            children: [
-              CarouselSlider.builder(
-                itemCount: urlImages.length,
-                options: CarouselOptions(
-                    initialPage: 0,
-                    height: 200.0,
-                    autoPlay: true,
-                    autoPlayInterval: const Duration(seconds: 2),
-                    //enlargeCenterPage: true,
-                    enableInfiniteScroll: true,
-                    onPageChanged: (index, reason) {
-                      setState(() {
-                        activeIndex = index;
-                      });
-                    }),
-                itemBuilder: (
-                  context,
-                  index,
-                  realIndex,
-                ) {
-                  final urlImage = urlImages[index];
-                  return _buildImage(urlImage, index);
-                },
-              ),
-              const SizedBox(height: 10),
-              _buildIndicator(),
-            ],
-          ),
-        ),
-        //Carousel end
-        //Main body start
-        SliverToBoxAdapter(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.only(left: 30),
-                child: Text(
-                  'Golaýda',
-                  style: Theme.of(context).textTheme.headlineSmall,
-                ),
-              ),
-              const SizedBox(height: 5),
-            ],
-          ),
-        ),
-        SliverGrid(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: crossAxisCount, // Number of columns
-            mainAxisSpacing: 10.0, // Spacing between rows
-            crossAxisSpacing: 10.0, // Spacing between columns
-            childAspectRatio: 0.65, // Aspect ratio of each cell
-          ),
-          delegate: SliverChildBuilderDelegate(
-            childCount: actions.length,
-            (BuildContext context, int index) {
-              final action = actions[index];
-              {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 10,
-                    horizontal: 10,
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Theme.of(context).shadowColor,
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: const Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: GestureDetector(
-                      onTap: () {
-                        Get.toNamed('/aboutAction');
-                      },
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                    bottomLeft: Radius.circular(30),
-                                    bottomRight: Radius.circular(30)),
-                                child: Image.asset(
-                                  action.imageName,
-                                  width: 300,
-                                  height: 200,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              Positioned(
-                                  bottom: 10,
-                                  right: 10,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: AppColors.mainGrey100,
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    child: IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.favorite,
-                                        color: AppColors.mainYellow,
-                                      ),
-                                    ),
-                                  ))
-                            ],
-                          ),
-                          const SizedBox(height: 10),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  action.title,
-                                  style: Theme.of(context).textTheme.labelLarge,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                const SizedBox(height: 5),
-                                Text(
-                                  action.location,
-                                  style:
-                                      Theme.of(context).textTheme.labelMedium,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                const SizedBox(height: 10),
-                                Text(
-                                  action.time,
-                                  style: Theme.of(context).textTheme.labelSmall,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
+
+            //Search start
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextField(
+                  controller: _searchController,
+                  decoration: InputDecoration(
+                    suffixIcon: GestureDetector(
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: Image.asset('assets/images/icons/search001.png'),
                       ),
                     ),
+                    labelText: "Search",
+                    filled: true,
+                    fillColor: AppColors.mainWhite,
                   ),
-                );
-              }
-            },
-          ),
+                ),
+              ),
+            ),
+            //Search end
+            //Carousel start
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  CarouselSlider.builder(
+                    itemCount: urlImages.length,
+                    options: CarouselOptions(
+                        initialPage: 0,
+                        height: 200.0,
+                        autoPlay: true,
+                        autoPlayInterval: const Duration(seconds: 2),
+                        //enlargeCenterPage: true,
+                        enableInfiniteScroll: true,
+                        onPageChanged: (index, reason) {
+                          setState(() {
+                            activeIndex = index;
+                          });
+                        }),
+                    itemBuilder: (
+                      context,
+                      index,
+                      realIndex,
+                    ) {
+                      final urlImage = urlImages[index];
+                      return _buildImage(urlImage, index);
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  _buildIndicator(),
+                ],
+              ),
+            ),
+            //Carousel end
+            //Main body start
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Text(
+                      'Golaýda',
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                ],
+              ),
+            ),
+            SliverGrid(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: crossAxisCount, // Number of columns
+                mainAxisSpacing: 10.0, // Spacing between rows
+                crossAxisSpacing: 10.0, // Spacing between columns
+                childAspectRatio: 0.65, // Aspect ratio of each cell
+              ),
+              delegate: SliverChildBuilderDelegate(
+                childCount: _filteredAction.length,
+                (BuildContext context, int index) {
+                  final actions = _filteredAction[index];
+                  {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 10,
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Theme.of(context).shadowColor,
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.toNamed('/aboutAction');
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Stack(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                        topLeft: Radius.circular(30),
+                                        topRight: Radius.circular(30),
+                                        bottomLeft: Radius.circular(30),
+                                        bottomRight: Radius.circular(30)),
+                                    child: Image.asset(
+                                      actions.imageName,
+                                      width: 300,
+                                      height: 200,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  Positioned(
+                                      bottom: 10,
+                                      right: 10,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            color: AppColors.mainGrey100,
+                                            borderRadius:
+                                                BorderRadius.circular(30)),
+                                        child: IconButton(
+                                          onPressed: () {},
+                                          icon: Icon(
+                                            Icons.favorite,
+                                            color: AppColors.mainYellow,
+                                          ),
+                                        ),
+                                      ))
+                                ],
+                              ),
+                              const SizedBox(height: 10),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      actions.title,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelLarge,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    const SizedBox(height: 5),
+                                    Text(
+                                      actions.location,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelMedium,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    const SizedBox(height: 10),
+                                    Text(
+                                      actions.time,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelSmall,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                },
+              ),
+            ),
+            // Main body end
+          ]),
         ),
-        // Main body end
-      ]),
+      ),
     );
   }
 

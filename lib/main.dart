@@ -67,9 +67,9 @@ class OnlineLibrary extends StatelessWidget {
           textTheme: GoogleFonts.kanitTextTheme(
             Theme.of(context).textTheme,
           ).apply(
-            bodyColor: AppColors.mainBlue,
-            displayColor: AppColors.mainBlue,
-          ),
+              bodyColor: AppColors.mainBlue,
+              displayColor: AppColors.mainWhite,
+              decorationColor: AppColors.mainBlue),
           // textTheme: TextTheme(
           //   titleLarge: TextStyle(color: AppColors.mainBlue),
           //   titleMedium: TextStyle(color: AppColors.mainBlue),
@@ -88,6 +88,10 @@ class OnlineLibrary extends StatelessWidget {
             backgroundColor: AppColors.mainBlue,
             selectedItemColor: AppColors.mainYellow,
             unselectedItemColor: AppColors.mainYellow,
+          ),
+          tabBarTheme: TabBarTheme(
+            labelColor: AppColors.mainBlue,
+            unselectedLabelColor: AppColors.mainWhite,
           )),
 
       // home: WelcomePage(),
