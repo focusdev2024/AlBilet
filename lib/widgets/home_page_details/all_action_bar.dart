@@ -236,7 +236,7 @@ class _AllActionsBarState extends State<AllActionsBar> {
                     height: 200.0,
                     autoPlay: true,
                     autoPlayInterval: const Duration(seconds: 2),
-                    //enlargeCenterPage: true,
+                    enlargeCenterPage: true,
                     enableInfiniteScroll: true,
                     onPageChanged: (index, reason) {
                       setState(() {
