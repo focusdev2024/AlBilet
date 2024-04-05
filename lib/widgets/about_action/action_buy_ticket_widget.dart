@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
+import 'package:online_library/widgets/about_action/tables_widget.dart';
 
 class ActionTimeDescriptionPage extends StatefulWidget {
   const ActionTimeDescriptionPage({super.key});
@@ -36,7 +37,7 @@ class _ActionTimeDescriptionPageState extends State<ActionTimeDescriptionPage> {
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
-    String formattedDate = '${now.year}-${now.month}-${now.day}';
+    String formattedDate = '${now.day}-${now.month}-${now.year}';
     return Center(
       child: Column(
         children: [
@@ -60,7 +61,7 @@ class _ActionTimeDescriptionPageState extends State<ActionTimeDescriptionPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Icon(Icons.swap_vert_rounded),
+                      const Icon(Icons.swap_vert_rounded),
                       DropdownButton<String>(
                         icon: Icon(Icons.swap_vert_rounded),
                         iconSize: 2,
@@ -153,10 +154,45 @@ class _ActionTimeDescriptionPageState extends State<ActionTimeDescriptionPage> {
                         borderRadius: BorderRadius.circular(10)),
                   ),
                   const SizedBox(width: 5),
-                  const Text('Boş ýerler'),
+                  const Text('Saýlanan'),
                 ],
               )
             ],
+          ),
+          const SizedBox(height: 30),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  const Text('Sahna'),
+                  const SizedBox(height: 4),
+                  Container(
+                    width: 300,
+                    height: 5,
+                    decoration: BoxDecoration(
+                      color: AppColors.mainBlue,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.mainYellow, // Shadow color
+                          spreadRadius: 0, // Spread radius
+                          blurRadius: 7, // Blur radius
+                          offset: Offset(0, 3), // Offset
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+          const SizedBox(height: 20),
+          SizedBox(
+            height: 500,
+            width: double.infinity,
+            child: TablesWidget(),
           )
         ],
       ),
