@@ -82,7 +82,7 @@ class _ActionDescriptionPageState extends State<ActionDescriptionPage> {
       Padding(
         padding: const EdgeInsets.all(18.0),
         child: StyleButtonWidget(
-            buttonName: 'Wagtlar saýlaň',
+            buttonName: 'Bilet saýlaň',
             onTap: () {
               final TabController controller = DefaultTabController.of(context);
               controller.animateTo(1);

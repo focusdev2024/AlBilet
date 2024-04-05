@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:online_library/widgets/about_action/action_description_widget.dart';
-import 'package:online_library/widgets/about_action/action_time_description_widget.dart';
+import 'package:online_library/widgets/about_action/action_buy_ticket_widget.dart';
 
 class AboutActionPage extends StatefulWidget {
   const AboutActionPage({super.key});
@@ -28,7 +28,7 @@ class _AboutActionPageState extends State<AboutActionPage> {
               ),
               Tab(
                 child: Text(
-                  'Wagtlar',
+                  'Biletlar',
                   style: TextStyle(color: AppColors.mainWhite),
                 ),
               ),
