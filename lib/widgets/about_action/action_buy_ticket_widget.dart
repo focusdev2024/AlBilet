@@ -190,9 +190,54 @@ class _ActionTimeDescriptionPageState extends State<ActionTimeDescriptionPage> {
           ),
           const SizedBox(height: 20),
           SizedBox(
-            height: 500,
+            height: 400,
             width: double.infinity,
-            child: TablesWidget(),
+            child: InteractiveViewer(
+              boundaryMargin: const EdgeInsets.all(10.0),
+              minScale: 0.1,
+              maxScale: 1.6,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text('1'),
+                      Text('2'),
+                      Text('3'),
+                      Text('4'),
+                      Text('5'),
+                      Text('6'),
+                      Text('7'),
+                      Text('8'),
+                      Text('9'),
+                      Text('10'),
+                      Text('11'),
+                      Text('12'),
+                      Text('13'),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                      TablesWidget(),
+                    ],
+                  )
+                ],
+              ),
+            ),
           )
         ],
       ),

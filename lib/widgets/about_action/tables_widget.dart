@@ -19,35 +19,63 @@ class _TablesWidgetState extends State<TablesWidget> {
     });
   }
 
+  List<ColorContainer> _containers = [
+    ColorContainer(),
+    ColorContainer(),
+    ColorContainer(),
+    ColorContainer(),
+    ColorContainer(),
+    ColorContainer(),
+    ColorContainer(),
+    ColorContainer(),
+    ColorContainer(),
+    ColorContainer(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
-          children: [
-            GestureDetector(
-              onTap: _changeColor,
-              child: Container(
-                width: 20,
-                height: 20,
-                decoration: BoxDecoration(
-                    color: _containerColor,
-                    borderRadius: BorderRadius.circular(10)),
-              ),
-            ),
-            GestureDetector(
-              onTap: _changeColor,
-              child: Container(
-                width: 20,
-                height: 20,
-                decoration: BoxDecoration(
-                    color: _containerColor,
-                    borderRadius: BorderRadius.circular(10)),
-              ),
-            ),
-          ],
-        )
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: _containers)
       ],
+    );
+  }
+}
+
+class ColorContainer extends StatefulWidget {
+  ColorContainer({Key});
+
+  @override
+  _ColorContainerState createState() => _ColorContainerState();
+}
+
+class _ColorContainerState extends State<ColorContainer> {
+  Color _currentColor = AppColors.mainBlue;
+
+  void _changeColor() {
+    setState(() {
+      _currentColor = _currentColor == AppColors.mainBlue
+          ? AppColors.mainYellow
+          : AppColors.mainBlue;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: _changeColor,
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Container(
+          width: 20,
+          height: 20,
+          decoration: BoxDecoration(
+              color: _currentColor, borderRadius: BorderRadius.circular(10)),
+        ),
+      ),
     );
   }
 }
