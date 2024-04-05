@@ -35,7 +35,7 @@ class _AboutActionPageState extends State<AboutActionPage> {
             ],
           ),
           title: Text(
-            'The movie name',
+            'Государственный цирк имени «Гёроглы» приглашает на показ',
             style: TextStyle(color: AppColors.mainWhite),
           ),
           centerTitle: true,
@@ -51,16 +51,7 @@ class _AboutActionPageState extends State<AboutActionPage> {
             ActionTimeDescriptionPage(),
           ],
         ),
-        bottomSheet: Container(
-          padding: EdgeInsets.all(10),
-          width: MediaQuery.of(context).size.width,
-          child: ElevatedButton(
-            child: const Text('PROCEED'),
-            onPressed: () {},
-          ),
-        ),
       ),
     );
-    ;
   }
 }

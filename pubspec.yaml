@@ -46,6 +46,8 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   pinput: ^4.0.0
   flutter_timer_countdown: ^1.0.7
+  video_player: ^2.8.4
+  device_info: ^2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -81,7 +83,7 @@ flutter:
     - assets/images/cinemas/
     - assets/images/sports/
     - assets/images/others/
-  #   - images/a_dot_ham.jpeg
+    - assets/images/aboutAction/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

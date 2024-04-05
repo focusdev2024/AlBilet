@@ -26,7 +26,7 @@ class OnlineLibrary extends StatelessWidget {
       title: "Al Bilet",
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      initialRoute: '/alBiletMain',
+      initialRoute: '/aboutAction',
       getPages: [
         GetPage(name: '/welcome', page: () => const WelcomePage()),
         GetPage(name: '/singIn', page: () => const LogInPage()),
@@ -47,52 +47,58 @@ class OnlineLibrary extends StatelessWidget {
         });
       },
       theme: ThemeData(
-          inputDecorationTheme: InputDecorationTheme(
-            hintStyle: TextStyle(color: AppColors.mainBlue),
-            labelStyle: TextStyle(color: AppColors.mainBlue),
-            border: OutlineInputBorder(
+        primarySwatch: Colors.blue,
+        inputDecorationTheme: InputDecorationTheme(
+          hintStyle: TextStyle(color: AppColors.mainBlue),
+          labelStyle: TextStyle(color: AppColors.mainBlue),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(color: AppColors.mainBlue),
+          ),
+          enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide(color: AppColors.mainBlue),
-            ),
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: AppColors.mainBlue)),
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: AppColors.mainBlue)),
+              borderSide: BorderSide(color: AppColors.mainBlue)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: BorderSide(color: AppColors.mainBlue)),
+        ),
+        scaffoldBackgroundColor: AppColors.mainWhite,
+        primaryColor: AppColors.mainYellow,
+        primaryColorLight: AppColors.mainBlue,
+        primaryColorDark: AppColors.mainWhite,
+        textTheme: GoogleFonts.kanitTextTheme(
+          Theme.of(context).textTheme,
+        ).apply(
+            bodyColor: AppColors.mainBlue,
+            displayColor: AppColors.mainWhite,
+            decorationColor: AppColors.mainBlue),
+        // textTheme: TextTheme(
+        //   titleLarge: TextStyle(color: AppColors.mainBlue),
+        //   titleMedium: TextStyle(color: AppColors.mainBlue),
+        //   titleSmall: TextStyle(color: AppColors.mainBlue),
+        //   displayLarge: TextStyle(fontFamily: ),
+        // ),
+        shadowColor: Colors.grey.withOpacity(0.2),
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppColors.mainBlue,
+          iconTheme: IconThemeData(
+            color: AppColors.mainWhite,
           ),
-          scaffoldBackgroundColor: AppColors.mainWhite,
-          primaryColorLight: AppColors.mainBlue,
-          primaryColorDark: AppColors.mainWhite,
-          textTheme: GoogleFonts.kanitTextTheme(
-            Theme.of(context).textTheme,
-          ).apply(
-              bodyColor: AppColors.mainBlue,
-              displayColor: AppColors.mainWhite,
-              decorationColor: AppColors.mainBlue),
-          // textTheme: TextTheme(
-          //   titleLarge: TextStyle(color: AppColors.mainBlue),
-          //   titleMedium: TextStyle(color: AppColors.mainBlue),
-          //   titleSmall: TextStyle(color: AppColors.mainBlue),
-          //   displayLarge: TextStyle(fontFamily: ),
-          // ),
-          shadowColor: Colors.grey.withOpacity(0.2),
-          appBarTheme: AppBarTheme(
-            backgroundColor: AppColors.mainBlue,
-            iconTheme: IconThemeData(
-              color: AppColors.mainWhite,
-            ),
-            elevation: 2.0,
-          ),
-          bottomNavigationBarTheme: BottomNavigationBarThemeData(
-            backgroundColor: AppColors.mainBlue,
-            selectedItemColor: AppColors.mainYellow,
-            unselectedItemColor: AppColors.mainYellow,
-          ),
-          tabBarTheme: TabBarTheme(
+          elevation: 2.0,
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: AppColors.mainBlue,
+          selectedItemColor: AppColors.mainYellow,
+          unselectedItemColor: AppColors.mainYellow,
+        ),
+        tabBarTheme: TabBarTheme(
             labelColor: AppColors.mainBlue,
             unselectedLabelColor: AppColors.mainWhite,
-          )),
+            indicatorColor: AppColors.mainYellow),
+        switchTheme: SwitchThemeData(
+          thumbColor: MaterialStatePropertyAll(AppColors.mainYellow),
+        ),
+      ),
 
       // home: WelcomePage(),
     );

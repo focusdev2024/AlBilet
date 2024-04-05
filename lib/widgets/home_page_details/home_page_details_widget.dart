@@ -17,7 +17,7 @@ class MainDatailsWidget extends StatefulWidget {
 
 class _MainDatailsWidgetState extends State<MainDatailsWidget> {
   List<String> actionNames = [
-    'All',
+    'Hemmesi',
     'Konsert',
     'Teatr',
     'Sirk',
