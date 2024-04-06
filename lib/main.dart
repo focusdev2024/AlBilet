@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:online_library/pages/buy_ticket_page/presentation/buy_ticket_page.dart';
 import 'package:online_library/pages/otp/presentation/otp.dart';
 import 'package:online_library/pages/library_main_page/presentation/library_main_page.dart';
 import 'package:online_library/pages/read_and_buy_page/presentation/read_and_buy_page.dart';
@@ -39,7 +40,11 @@ class OnlineLibrary extends StatelessWidget {
         GetPage(
             name: '/alBiletMain/mainDetails', page: () => MainDatailsWidget()),
         GetPage(name: '/getTokenPage', page: () => const GetTokenPage()),
-        GetPage(name: '/aboutAction', page: () => const AboutActionPage())
+        GetPage(name: '/aboutAction', page: () => const AboutActionPage()),
+        GetPage(
+          name: '/buyTicketPage',
+          page: () => const BuyTicketPage(),
+        )
       ],
       onGenerateRoute: (RouteSettings settings) {
         return MaterialPageRoute<void>(builder: (context) {
