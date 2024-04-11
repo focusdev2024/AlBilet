@@ -84,6 +84,7 @@ flutter:
     - assets/images/sports/
     - assets/images/others/
     - assets/images/aboutAction/
+    - assets/images/bank_carts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
