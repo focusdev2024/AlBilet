@@ -88,7 +88,7 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
       body: SafeArea(
         child: IndexedStack(
           index: _selectedPage,
-          children: [
+          children: const [
             MainDatailsWidget(),
           ],
         ),
@@ -153,7 +153,7 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    AlBiletMainPage()));
+                                                    const AlBiletMainPage()));
                                       },
                                       child: const Text('Ýap'),
                                     ),
@@ -165,7 +165,7 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    WelcomePage()));
+                                                    const WelcomePage()));
                                       },
                                       child: const Text('Agza bol'),
                                     ),
@@ -203,7 +203,7 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    AlBiletMainPage()));
+                                                    const AlBiletMainPage()));
                                       },
                                       child: const Text('Ýap'),
                                     ),
@@ -215,7 +215,7 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    WelcomePage()));
+                                                    const WelcomePage()));
                                       },
                                       child: const Text('Agza bol'),
                                     ),
@@ -253,7 +253,7 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    AlBiletMainPage()));
+                                                    const AlBiletMainPage()));
                                       },
                                       child: const Text('Ýap'),
                                     ),
@@ -265,7 +265,7 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    WelcomePage()));
+                                                    const WelcomePage()));
                                       },
                                       child: const Text('Agza bol'),
                                     ),

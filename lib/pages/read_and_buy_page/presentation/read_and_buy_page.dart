@@ -30,10 +30,10 @@ class _ReadAndBuyPageState extends State<ReadAndBuyPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
+                const SizedBox(
                   width: 230,
                   height: 340,
-                  child: const Placeholder(),
+                  child: Placeholder(),
                 ),
                 const SizedBox(height: 20),
                 const Text(
@@ -73,7 +73,7 @@ class _ReadAndBuyPageState extends State<ReadAndBuyPage> {
                   starSpacing: 2,
                   maxValueVisibility: true,
                   valueLabelVisibility: true,
-                  animationDuration: Duration(milliseconds: 1000),
+                  animationDuration: const Duration(milliseconds: 1000),
                   valueLabelPadding:
                       const EdgeInsets.symmetric(vertical: 1, horizontal: 8),
                   valueLabelMargin: const EdgeInsets.only(right: 8),

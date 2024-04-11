@@ -25,7 +25,7 @@ class _ActionDescriptionPageState extends State<ActionDescriptionPage> {
                 fit: BoxFit.fill,
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 16,
                 vertical: 20,
@@ -39,7 +39,7 @@ class _ActionDescriptionPageState extends State<ActionDescriptionPage> {
                   SizedBox(height: 20),
                   SizedBox(
                     height: 300,
-                    child: const Column(
+                    child: Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,

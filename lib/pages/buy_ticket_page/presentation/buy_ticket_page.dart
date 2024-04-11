@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:online_library/pages/chose_bank_cart_page/presentation/chose_bank_card_page.dart';
 import 'package:online_library/tools/colors/albilet_colors.dart';
 import 'package:online_library/widgets/style_button_widget.dart';
 
@@ -22,7 +19,7 @@ class _BuyTicketPageState extends State<BuyTicketPage> {
             onPressed: () {
               Get.back();
             },
-            icon: Icon(Icons.arrow_back_ios_new_rounded)),
+            icon: const Icon(Icons.arrow_back_ios_new_rounded)),
         title: Text(
           'Satyn almak',
           style: TextStyle(color: AppColors.mainWhite),
@@ -150,7 +147,6 @@ class _BuyTicketPageState extends State<BuyTicketPage> {
 class _TextWidgetBold extends StatelessWidget {
   const _TextWidgetBold({
     required this.text,
-    super.key,
   });
 
   final String text;
@@ -169,7 +165,6 @@ class _BankCardsContainer extends StatefulWidget {
   const _BankCardsContainer({
     required this.imageUrl,
     required this.bankCardName,
-    super.key,
   });
 
   final String imageUrl;
@@ -206,7 +201,7 @@ class _BankCardsContainerState extends State<_BankCardsContainer> {
               color: AppColors.mainGrey100,
               spreadRadius: 5,
               blurRadius: 7,
-              offset: Offset(0, 1),
+              offset: const Offset(0, 1),
             ),
           ],
         ),

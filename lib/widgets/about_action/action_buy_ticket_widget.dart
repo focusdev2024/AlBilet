@@ -66,7 +66,7 @@ class _ActionTimeDescriptionPageState extends State<ActionTimeDescriptionPage> {
                       children: <Widget>[
                         const Icon(Icons.swap_vert_rounded),
                         DropdownButton<String>(
-                          icon: Icon(Icons.swap_vert_rounded),
+                          icon: const Icon(Icons.swap_vert_rounded),
                           iconSize: 2,
                           iconDisabledColor: AppColors.mainYellow,
                           value: selectedItem,
@@ -81,7 +81,7 @@ class _ActionTimeDescriptionPageState extends State<ActionTimeDescriptionPage> {
                               value: value,
                               child: Text(
                                 value,
-                                style: TextStyle(fontSize: 15),
+                                style: const TextStyle(fontSize: 15),
                               ),
                             );
                           }).toList(),
@@ -182,7 +182,7 @@ class _ActionTimeDescriptionPageState extends State<ActionTimeDescriptionPage> {
                             color: AppColors.mainYellow, // Shadow color
                             spreadRadius: 0, // Spread radius
                             blurRadius: 7, // Blur radius
-                            offset: Offset(0, 3), // Offset
+                            offset: const Offset(0, 3), // Offset
                           ),
                         ],
                       ),
@@ -199,7 +199,7 @@ class _ActionTimeDescriptionPageState extends State<ActionTimeDescriptionPage> {
                 boundaryMargin: const EdgeInsets.all(10.0),
                 minScale: 0.1,
                 maxScale: 1.6,
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -299,120 +299,3 @@ class _SwitchExampleState extends State<SwitchExample> {
     );
   }
 }
-
-// DataTable(
-//             columns: const <DataColumn>[
-//               DataColumn(label: Text('Wagt')),
-//               DataColumn(label: Text('Çagalar')),
-//               DataColumn(label: Text('Ulular')),
-//               DataColumn(label: Text('VIP')),
-//             ],
-//             rows: const <DataRow>[
-//               DataRow(
-//                 cells: [
-//                   DataCell(Text('15:00')),
-//                   DataCell(Text('15 TMT')),
-//                   DataCell(Text('20 TMT')),
-//                   DataCell(Text('50 TMT')),
-//                 ],
-//               ),
-//               DataRow(
-//                 cells: <DataCell>[
-//                   DataCell(Text('17:00')),
-//                   DataCell(Text('15 TMT')),
-//                   DataCell(Text('20 TMT')),
-//                   DataCell(Text('50 TMT')),
-//                 ],
-//               ),
-//               DataRow(
-//                 cells: <DataCell>[
-//                   DataCell(Text('19:00')),
-//                   DataCell(Text('15 TMT')),
-//                   DataCell(Text('20 TMT')),
-//                   DataCell(Text('50 TMT')),
-//                 ],
-//               ),
-//             ],
-//           ),
-
-// Table(
-//             border: TableBorder.all(),
-//             children: <TableRow>[
-//               TableRow(
-//                 children: <Widget>[
-//                   Container(
-//                     child: Center(child: Text('Wagt')),
-//                   ),
-//                   Container(
-//                     child: Center(child: Text('Çagalar')),
-//                   ),
-//                   Container(
-//                     child: Center(child: Text('Ulular')),
-//                   ),
-//                   Container(
-//                     child: Center(child: Text('VIP')),
-//                   ),
-//                 ],
-//               ),
-//               TableRow(
-//                 children: <Widget>[
-//                   Container(
-//                     height: 70,
-//                     child: Center(child: Text('15:00')),
-//                   ),
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('20 TMT')),
-//                   ),
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('30 TMT')),
-//                   ),
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('50 TMT')),
-//                   )
-//                 ],
-//               ),
-//               TableRow(
-//                 children: <Widget>[
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('17:00')),
-//                   ),
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('20 TMT')),
-//                   ),
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('30 TMT')),
-//                   ),
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('50 TMT')),
-//                   )
-//                 ],
-//               ),
-//               TableRow(
-//                 children: <Widget>[
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('19:00')),
-//                   ),
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('20 TMT')),
-//                   ),
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('30 TMT')),
-//                   ),
-//                   Container(
-//                     height: 30,
-//                     child: Center(child: Text('50 TMT')),
-//                   )
-//                 ],
-//               ),
-//             ],
-//           )
