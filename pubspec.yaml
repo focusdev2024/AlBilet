@@ -48,10 +48,17 @@ dependencies:
   flutter_timer_countdown: ^1.0.7
   video_player: ^2.8.4
   device_info: ^2.0.3
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/al_bilet001.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

@@ -283,16 +283,3 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
     );
   }
 }
-
-Widget _buildSearchField() {
-  return TextField(
-    decoration: const InputDecoration(
-      hintText: 'Search...',
-      border: InputBorder.none,
-    ),
-    autofocus: true,
-    onChanged: (value) {
-      // Perform search operation here
-    },
-  );
-}

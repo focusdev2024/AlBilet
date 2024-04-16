@@ -417,6 +417,7 @@ int calculateCrossAxisCount(BuildContext context) {
   return crossAxisCount;
 }
 
+// ignore: unused_element
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   final double minHeight;
   final double maxHeight;

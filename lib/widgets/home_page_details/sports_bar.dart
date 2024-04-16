@@ -209,17 +209,6 @@ class _SportsBarState extends State<SportsBar> {
       ]),
     );
   }
-
-  Widget _buildImage(String urlImage, int index) => Container(
-        //margin: const EdgeInsets.symmetric(horizontal: 1),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Image.asset(
-            urlImage,
-            fit: BoxFit.cover,
-          ),
-        ),
-      );
 }
 
 int calculateCrossAxisCount(BuildContext context) {
@@ -229,6 +218,7 @@ int calculateCrossAxisCount(BuildContext context) {
   return crossAxisCount;
 }
 
+// ignore: unused_element
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   final double minHeight;
   final double maxHeight;

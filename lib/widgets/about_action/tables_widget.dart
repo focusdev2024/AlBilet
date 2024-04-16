@@ -9,16 +9,6 @@ class TablesWidget extends StatefulWidget {
 }
 
 class _TablesWidgetState extends State<TablesWidget> {
-  Color _containerColor = AppColors.mainBlue;
-
-  void _changeColor() {
-    setState(() {
-      _containerColor = _containerColor == AppColors.mainBlue
-          ? AppColors.mainYellow
-          : AppColors.mainBlue;
-    });
-  }
-
   List<ColorContainer> _containers = [
     ColorContainer(),
     ColorContainer(),
