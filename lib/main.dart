@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:online_library/pages/buy_ticket_page/presentation/buy_ticket_page.dart';
 import 'package:online_library/pages/otp/presentation/otp.dart';
 import 'package:online_library/pages/library_main_page/presentation/library_main_page.dart';
-import 'package:online_library/pages/read_and_buy_page/presentation/read_and_buy_page.dart';
 import 'package:online_library/pages/sing_up_page/presentation/singup_page.dart';
 import 'package:online_library/pages/welcome_page/presentation/welcome_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -33,10 +32,6 @@ class OnlineLibrary extends StatelessWidget {
         GetPage(name: '/singIn', page: () => const LogInPage()),
         GetPage(name: '/singUp', page: () => const SingUpPage()),
         GetPage(name: '/alBiletMain', page: () => const AlBiletMainPage()),
-        GetPage(
-          name: '/readAndBuyPage',
-          page: () => const ReadAndBuyPage(),
-        ),
         GetPage(
             name: '/alBiletMain/mainDetails', page: () => MainDatailsWidget()),
         GetPage(name: '/getTokenPage', page: () => const GetTokenPage()),
