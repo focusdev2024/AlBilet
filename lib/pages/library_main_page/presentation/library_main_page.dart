@@ -74,6 +74,7 @@ class _AlBiletMainPageState extends State<AlBiletMainPage> {
                     Get.toNamed('welcome');
                   },
                   style: ButtonStyle(
+                      // ignore: deprecated_member_use
                       backgroundColor: MaterialStateProperty.all<Color>(
                           AppColors.mainYellow)),
                   child: Text(
